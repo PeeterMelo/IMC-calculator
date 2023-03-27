@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Índice de Massa Corporal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+    <h1>IMC - <span class="imc"> Í</span>ndice de <span class="imc">M</span>assa <span class="imc">C</span>orporal</h1>
+    <div class="container">
+
+        <label for="altura"> Altura (Metros, Centímetros):</label>
+        <input type="number" id="altura" name="altura">
+        <br>
+
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" maxlength="5">
+        <br>
+
+
+
+        <button onclick="calcularIMC()"> Calcular IMC</button>
+        <br>
+        <p><b>Seu índice de massa corporal é:</b> <span id="resultado"><b></b></span></p>
+    </div>
+
+<footer>
+    <p><b>Credits by PeeterⓇ</b></p>
+</footer>
+
+
+
+
+
+
+
+
+    <script>
+        function calcularIMC() {
+            const peso = document.getElementById("peso").value;
+            const altura = document.getElementById("altura").value;
+            const imc = peso / (altura ** 2);
+            document.getElementById("resultado").textContent = imc.toFixed(2);
+        }
+
+        let tituloDinamico = document.title;
+        window.addEventListener("blur", () => {
+            document.title = "Clique Aqui"
+        })
+        window.addEventListener("focus", () => {
+            document.title = tituloDinamico
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
